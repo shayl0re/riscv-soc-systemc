@@ -1,0 +1,64 @@
+
+6. Printing statistics.
+
+=== mac_array ===
+
+   Number of wires:                 13
+   Number of wire bits:          12295
+   Number of public wires:           6
+   Number of public wire bits:    6147
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6276
+     BUFG                            1
+     IBUF                         2051
+     OBUF                         4096
+     mac_pe                        128
+
+=== mac_pe ===
+
+   Number of wires:                164
+   Number of wire bits:            537
+   Number of public wires:           9
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                331
+     CARRY4                         12
+     FDRE                           50
+     LUT2                           38
+     LUT3                           43
+     LUT4                           27
+     LUT5                           20
+     LUT6                           93
+     MUXF7                          37
+     MUXF8                          11
+
+=== design hierarchy ===
+
+   mac_array                         1
+     mac_pe                        128
+
+   Number of wires:              21005
+   Number of wire bits:          81031
+   Number of public wires:        1158
+   Number of public wire bits:   14979
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              48516
+     BUFG                            1
+     CARRY4                       1536
+     FDRE                         6400
+     IBUF                         2051
+     LUT2                         4864
+     LUT3                         5504
+     LUT4                         3456
+     LUT5                         2560
+     LUT6                        11904
+     MUXF7                        4736
+     MUXF8                        1408
+     OBUF                         4096
+

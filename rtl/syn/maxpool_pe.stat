@@ -1,0 +1,21 @@
+
+4. Printing statistics.
+
+=== maxpool_pe ===
+
+   Number of wires:                 49
+   Number of wire bits:            172
+   Number of public wires:           5
+   Number of public wire bits:      40
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 89
+     CARRY4                          3
+     IBUF                           32
+     LUT3                           26
+     LUT4                            4
+     LUT5                            2
+     LUT6                           14
+     OBUF                            8
+

@@ -1,0 +1,82 @@
+{
+ "auth_fsm": {
+  "LUT": 12,
+  "FF": 2,
+  "DSP": 0,
+  "CARRY4": 0,
+  "MUXF": 4,
+  "cells": 41
+ },
+ "lfsr_noise": {
+  "LUT": 5,
+  "FF": 8,
+  "DSP": 0,
+  "CARRY4": 0,
+  "MUXF": 0,
+  "cells": 24
+ },
+ "mac_array_128": {
+  "LUT": 8192,
+  "FF": 4352,
+  "DSP": 128,
+  "CARRY4": 1024,
+  "MUXF": 0,
+  "cells": 19844
+ },
+ "mac_array_128_nodsp": {
+  "LUT": 28288,
+  "FF": 6400,
+  "DSP": 0,
+  "CARRY4": 1536,
+  "MUXF": 6144,
+  "cells": 48516
+ },
+ "mac_array_9": {
+  "LUT": 576,
+  "FF": 306,
+  "DSP": 9,
+  "CARRY4": 72,
+  "MUXF": 0,
+  "cells": 1399
+ },
+ "mac_array_9_nodsp": {
+  "LUT": 1989,
+  "FF": 450,
+  "DSP": 0,
+  "CARRY4": 108,
+  "MUXF": 432,
+  "cells": 3415
+ },
+ "mac_pe": {
+  "LUT": 64,
+  "FF": 34,
+  "DSP": 1,
+  "CARRY4": 8,
+  "MUXF": 0,
+  "cells": 159
+ },
+ "mac_pe_nodsp": {
+  "LUT": 221,
+  "FF": 50,
+  "DSP": 0,
+  "CARRY4": 12,
+  "MUXF": 48,
+  "cells": 383
+ },
+ "maxpool_pe": {
+  "LUT": 46,
+  "FF": 0,
+  "DSP": 0,
+  "CARRY4": 3,
+  "MUXF": 0,
+  "cells": 89
+ },
+ "secure_gate": {
+  "LUT": 17,
+  "FF": 10,
+  "DSP": 0,
+  "CARRY4": 0,
+  "MUXF": 4,
+  "cells": 61
+ }
+}

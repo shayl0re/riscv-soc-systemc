@@ -1,0 +1,56 @@
+
+6. Printing statistics.
+
+=== mac_array ===
+
+   Number of wires:                 13
+   Number of wire bits:            871
+   Number of public wires:           6
+   Number of public wire bits:     435
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                445
+     BUFG                            1
+     IBUF                          147
+     OBUF                          288
+     mac_pe                          9
+
+=== mac_pe ===
+
+   Number of wires:                 45
+   Number of wire bits:            229
+   Number of public wires:           9
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                107
+     CARRY4                          8
+     DSP48E1                         1
+     FDRE                           34
+     LUT2                           32
+     LUT3                           32
+
+=== design hierarchy ===
+
+   mac_array                         1
+     mac_pe                          9
+
+   Number of wires:                418
+   Number of wire bits:           2932
+   Number of public wires:          87
+   Number of public wire bits:    1056
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1399
+     BUFG                            1
+     CARRY4                         72
+     DSP48E1                         9
+     FDRE                          306
+     IBUF                          147
+     LUT2                          288
+     LUT3                          288
+     OBUF                          288
+

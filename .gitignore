@@ -1,0 +1,30 @@
+﻿# Compiled binaries
+systemc/soc_sim
+*.o
+*.a
+*.so
+build/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# SystemC
+*.vcd
+systemc/data/weights.bin
+systemc/data/golden_logits.bin
+systemc/data/test_images.bin
+systemc/data/test_labels.bin
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+results/*.png

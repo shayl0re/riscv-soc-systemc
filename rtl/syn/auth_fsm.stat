@@ -1,0 +1,24 @@
+
+4. Printing statistics.
+
+=== auth_fsm ===
+
+   Number of wires:                 29
+   Number of wire bits:             77
+   Number of public wires:          10
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 41
+     BUFG                            1
+     FDRE                            2
+     IBUF                           18
+     LUT2                            3
+     LUT3                            1
+     LUT5                            1
+     LUT6                            7
+     MUXF7                           3
+     MUXF8                           1
+     OBUF                            4
+

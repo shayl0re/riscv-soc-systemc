@@ -1,0 +1,22 @@
+
+4. Printing statistics.
+
+=== mac_pe ===
+
+   Number of wires:                 83
+   Number of wire bits:            313
+   Number of public wires:           9
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                159
+     BUFG                            1
+     CARRY4                          8
+     DSP48E1                         1
+     FDRE                           34
+     IBUF                           19
+     LUT2                           32
+     LUT3                           32
+     OBUF                           32
+

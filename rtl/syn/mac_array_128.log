@@ -1,0 +1,1728 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog mac_pe.v mac_array.v; chparam -set N 128 mac_array; hierarchy -top mac_array; synth_xilinx -family xc7  -top mac_array; tee -o syn/mac_array_128.stat stat' --
+
+1. Executing Verilog-2005 frontend: mac_pe.v
+Parsing Verilog input from `mac_pe.v' to AST representation.
+Generating RTLIL representation for module `\mac_pe'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: mac_array.v
+Parsing Verilog input from `mac_array.v' to AST representation.
+Generating RTLIL representation for module `\mac_array'.
+Successfully finished Verilog frontend.
+Parameter \N = 128
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\mac_array'.
+Parameter \N = 128
+Generating RTLIL representation for module `$paramod\mac_array\N=32'00000000000000000000000010000000'.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+
+4.2. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+Removed 0 unused modules.
+
+5. Executing SYNTH_XILINX pass.
+
+5.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\VCC'.
+Generating RTLIL representation for module `\GND'.
+Generating RTLIL representation for module `\IBUF'.
+Generating RTLIL representation for module `\IBUFG'.
+Generating RTLIL representation for module `\OBUF'.
+Generating RTLIL representation for module `\IOBUF'.
+Generating RTLIL representation for module `\OBUFT'.
+Generating RTLIL representation for module `\BUFG'.
+Generating RTLIL representation for module `\BUFGCTRL'.
+Generating RTLIL representation for module `\BUFHCE'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\LUT6_2'.
+Generating RTLIL representation for module `\$__ABC9_LUT7'.
+Generating RTLIL representation for module `\$__ABC9_LUT8'.
+Generating RTLIL representation for module `\MUXCY'.
+Generating RTLIL representation for module `\MUXF5'.
+Generating RTLIL representation for module `\MUXF6'.
+Generating RTLIL representation for module `\MUXF7'.
+Generating RTLIL representation for module `\MUXF8'.
+Generating RTLIL representation for module `\MUXF9'.
+Generating RTLIL representation for module `\XORCY'.
+Generating RTLIL representation for module `\CARRY4'.
+Generating RTLIL representation for module `\CARRY8'.
+Generating RTLIL representation for module `\ORCY'.
+Generating RTLIL representation for module `\MULT_AND'.
+Generating RTLIL representation for module `\FDRE'.
+Generating RTLIL representation for module `\FDRE_1'.
+Generating RTLIL representation for module `\FDSE'.
+Generating RTLIL representation for module `\FDSE_1'.
+Generating RTLIL representation for module `\FDRSE'.
+Generating RTLIL representation for module `\FDRSE_1'.
+Generating RTLIL representation for module `\FDCE'.
+Generating RTLIL representation for module `\FDCE_1'.
+Generating RTLIL representation for module `\FDPE'.
+Generating RTLIL representation for module `\FDPE_1'.
+Generating RTLIL representation for module `\FDCPE'.
+Generating RTLIL representation for module `\FDCPE_1'.
+Generating RTLIL representation for module `\LDCE'.
+Generating RTLIL representation for module `\LDPE'.
+Generating RTLIL representation for module `\LDCPE'.
+Generating RTLIL representation for module `\AND2B1L'.
+Generating RTLIL representation for module `\OR2L'.
+Generating RTLIL representation for module `\RAM16X1S'.
+Generating RTLIL representation for module `\RAM16X1S_1'.
+Generating RTLIL representation for module `\RAM32X1S'.
+Generating RTLIL representation for module `\RAM32X1S_1'.
+Generating RTLIL representation for module `\RAM64X1S'.
+Generating RTLIL representation for module `\RAM64X1S_1'.
+Generating RTLIL representation for module `\RAM128X1S'.
+Generating RTLIL representation for module `\RAM128X1S_1'.
+Generating RTLIL representation for module `\RAM256X1S'.
+Generating RTLIL representation for module `\RAM512X1S'.
+Generating RTLIL representation for module `\RAM16X2S'.
+Generating RTLIL representation for module `\RAM32X2S'.
+Generating RTLIL representation for module `\RAM64X2S'.
+Generating RTLIL representation for module `\RAM16X4S'.
+Generating RTLIL representation for module `\RAM32X4S'.
+Generating RTLIL representation for module `\RAM16X8S'.
+Generating RTLIL representation for module `\RAM32X8S'.
+Generating RTLIL representation for module `\RAM16X1D'.
+Generating RTLIL representation for module `\RAM16X1D_1'.
+Generating RTLIL representation for module `\RAM32X1D'.
+Generating RTLIL representation for module `\RAM32X1D_1'.
+Generating RTLIL representation for module `\RAM64X1D'.
+Generating RTLIL representation for module `\RAM64X1D_1'.
+Generating RTLIL representation for module `\RAM128X1D'.
+Generating RTLIL representation for module `\RAM256X1D'.
+Generating RTLIL representation for module `\RAM32M'.
+Generating RTLIL representation for module `\RAM32M16'.
+Generating RTLIL representation for module `\RAM64M'.
+Generating RTLIL representation for module `\RAM64M8'.
+Generating RTLIL representation for module `\RAM32X16DR8'.
+Generating RTLIL representation for module `\RAM64X8SW'.
+Generating RTLIL representation for module `\ROM16X1'.
+Generating RTLIL representation for module `\ROM32X1'.
+Generating RTLIL representation for module `\ROM64X1'.
+Generating RTLIL representation for module `\ROM128X1'.
+Generating RTLIL representation for module `\ROM256X1'.
+Generating RTLIL representation for module `\SRL16'.
+Generating RTLIL representation for module `\SRL16E'.
+Generating RTLIL representation for module `\SRLC16'.
+Generating RTLIL representation for module `\SRLC16E'.
+Generating RTLIL representation for module `\SRLC32E'.
+Generating RTLIL representation for module `\CFGLUT5'.
+Generating RTLIL representation for module `\MULT18X18'.
+Generating RTLIL representation for module `\MULT18X18S'.
+Generating RTLIL representation for module `\MULT18X18SIO'.
+Generating RTLIL representation for module `\DSP48A'.
+Generating RTLIL representation for module `\DSP48A1'.
+Generating RTLIL representation for module `\DSP48'.
+Generating RTLIL representation for module `\DSP48E1'.
+Generating RTLIL representation for module `\RAMB18E1'.
+Generating RTLIL representation for module `\RAMB36E1'.
+Successfully finished Verilog frontend.
+
+5.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_xtra.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_xtra.v' to AST representation.
+Generating RTLIL representation for module `\RAMB4_S1'.
+Generating RTLIL representation for module `\RAMB4_S2'.
+Generating RTLIL representation for module `\RAMB4_S4'.
+Generating RTLIL representation for module `\RAMB4_S8'.
+Generating RTLIL representation for module `\RAMB4_S16'.
+Generating RTLIL representation for module `\RAMB4_S1_S1'.
+Generating RTLIL representation for module `\RAMB4_S1_S2'.
+Generating RTLIL representation for module `\RAMB4_S1_S4'.
+Generating RTLIL representation for module `\RAMB4_S1_S8'.
+Generating RTLIL representation for module `\RAMB4_S1_S16'.
+Generating RTLIL representation for module `\RAMB4_S2_S2'.
+Generating RTLIL representation for module `\RAMB4_S2_S4'.
+Generating RTLIL representation for module `\RAMB4_S2_S8'.
+Generating RTLIL representation for module `\RAMB4_S2_S16'.
+Generating RTLIL representation for module `\RAMB4_S4_S4'.
+Generating RTLIL representation for module `\RAMB4_S4_S8'.
+Generating RTLIL representation for module `\RAMB4_S4_S16'.
+Generating RTLIL representation for module `\RAMB4_S8_S8'.
+Generating RTLIL representation for module `\RAMB4_S8_S16'.
+Generating RTLIL representation for module `\RAMB4_S16_S16'.
+Generating RTLIL representation for module `\RAMB16_S1'.
+Generating RTLIL representation for module `\RAMB16_S2'.
+Generating RTLIL representation for module `\RAMB16_S4'.
+Generating RTLIL representation for module `\RAMB16_S9'.
+Generating RTLIL representation for module `\RAMB16_S18'.
+Generating RTLIL representation for module `\RAMB16_S36'.
+Generating RTLIL representation for module `\RAMB16_S1_S1'.
+Generating RTLIL representation for module `\RAMB16_S1_S2'.
+Generating RTLIL representation for module `\RAMB16_S1_S4'.
+Generating RTLIL representation for module `\RAMB16_S1_S9'.
+Generating RTLIL representation for module `\RAMB16_S1_S18'.
+Generating RTLIL representation for module `\RAMB16_S1_S36'.
+Generating RTLIL representation for module `\RAMB16_S2_S2'.
+Generating RTLIL representation for module `\RAMB16_S2_S4'.
+Generating RTLIL representation for module `\RAMB16_S2_S9'.
+Generating RTLIL representation for module `\RAMB16_S2_S18'.
+Generating RTLIL representation for module `\RAMB16_S2_S36'.
+Generating RTLIL representation for module `\RAMB16_S4_S4'.
+Generating RTLIL representation for module `\RAMB16_S4_S9'.
+Generating RTLIL representation for module `\RAMB16_S4_S18'.
+Generating RTLIL representation for module `\RAMB16_S4_S36'.
+Generating RTLIL representation for module `\RAMB16_S9_S9'.
+Generating RTLIL representation for module `\RAMB16_S9_S18'.
+Generating RTLIL representation for module `\RAMB16_S9_S36'.
+Generating RTLIL representation for module `\RAMB16_S18_S18'.
+Generating RTLIL representation for module `\RAMB16_S18_S36'.
+Generating RTLIL representation for module `\RAMB16_S36_S36'.
+Generating RTLIL representation for module `\RAMB16BWE_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36'.
+Generating RTLIL representation for module `\RAMB16BWE_S18_S9'.
+Generating RTLIL representation for module `\RAMB16BWE_S18_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S9'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S18'.
+Generating RTLIL representation for module `\RAMB16BWE_S36_S36'.
+Generating RTLIL representation for module `\RAMB16BWER'.
+Generating RTLIL representation for module `\RAMB8BWER'.
+Generating RTLIL representation for module `\FIFO16'.
+Generating RTLIL representation for module `\RAMB16'.
+Generating RTLIL representation for module `\RAMB32_S64_ECC'.
+Generating RTLIL representation for module `\FIFO18'.
+Generating RTLIL representation for module `\FIFO18_36'.
+Generating RTLIL representation for module `\FIFO36'.
+Generating RTLIL representation for module `\FIFO36_72'.
+Generating RTLIL representation for module `\RAMB18'.
+Generating RTLIL representation for module `\RAMB36'.
+Generating RTLIL representation for module `\RAMB18SDP'.
+Generating RTLIL representation for module `\RAMB36SDP'.
+Generating RTLIL representation for module `\FIFO18E1'.
+Generating RTLIL representation for module `\FIFO36E1'.
+Generating RTLIL representation for module `\FIFO18E2'.
+Generating RTLIL representation for module `\FIFO36E2'.
+Generating RTLIL representation for module `\RAMB18E2'.
+Generating RTLIL representation for module `\RAMB36E2'.
+Generating RTLIL representation for module `\URAM288'.
+Generating RTLIL representation for module `\URAM288_BASE'.
+Generating RTLIL representation for module `\DSP48E'.
+Generating RTLIL representation for module `\DSP48E2'.
+Generating RTLIL representation for module `\FDDRCPE'.
+Generating RTLIL representation for module `\FDDRRSE'.
+Generating RTLIL representation for module `\IFDDRCPE'.
+Generating RTLIL representation for module `\IFDDRRSE'.
+Generating RTLIL representation for module `\OFDDRCPE'.
+Generating RTLIL representation for module `\OFDDRRSE'.
+Generating RTLIL representation for module `\OFDDRTCPE'.
+Generating RTLIL representation for module `\OFDDRTRSE'.
+Generating RTLIL representation for module `\IDDR2'.
+Generating RTLIL representation for module `\ODDR2'.
+Generating RTLIL representation for module `\IDDR'.
+Generating RTLIL representation for module `\IDDR_2CLK'.
+Generating RTLIL representation for module `\ODDR'.
+Generating RTLIL representation for module `\IDELAYCTRL'.
+Generating RTLIL representation for module `\IDELAY'.
+Generating RTLIL representation for module `\ISERDES'.
+Generating RTLIL representation for module `\OSERDES'.
+Generating RTLIL representation for module `\IODELAY'.
+Generating RTLIL representation for module `\ISERDES_NODELAY'.
+Generating RTLIL representation for module `\IODELAYE1'.
+Generating RTLIL representation for module `\ISERDESE1'.
+Generating RTLIL representation for module `\OSERDESE1'.
+Generating RTLIL representation for module `\IDELAYE2'.
+Generating RTLIL representation for module `\ODELAYE2'.
+Generating RTLIL representation for module `\ISERDESE2'.
+Generating RTLIL representation for module `\OSERDESE2'.
+Generating RTLIL representation for module `\PHASER_IN'.
+Generating RTLIL representation for module `\PHASER_IN_PHY'.
+Generating RTLIL representation for module `\PHASER_OUT'.
+Generating RTLIL representation for module `\PHASER_OUT_PHY'.
+Generating RTLIL representation for module `\PHASER_REF'.
+Generating RTLIL representation for module `\PHY_CONTROL'.
+Generating RTLIL representation for module `\IDDRE1'.
+Generating RTLIL representation for module `\ODDRE1'.
+Generating RTLIL representation for module `\IDELAYE3'.
+Generating RTLIL representation for module `\ODELAYE3'.
+Generating RTLIL representation for module `\ISERDESE3'.
+Generating RTLIL representation for module `\OSERDESE3'.
+Generating RTLIL representation for module `\BITSLICE_CONTROL'.
+Generating RTLIL representation for module `\RIU_OR'.
+Generating RTLIL representation for module `\RX_BITSLICE'.
+Generating RTLIL representation for module `\RXTX_BITSLICE'.
+Generating RTLIL representation for module `\TX_BITSLICE'.
+Generating RTLIL representation for module `\TX_BITSLICE_TRI'.
+Generating RTLIL representation for module `\IODELAY2'.
+Generating RTLIL representation for module `\IODRP2'.
+Generating RTLIL representation for module `\IODRP2_MCB'.
+Generating RTLIL representation for module `\ISERDES2'.
+Generating RTLIL representation for module `\OSERDES2'.
+Generating RTLIL representation for module `\IBUF_DLY_ADJ'.
+Generating RTLIL representation for module `\IBUF_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUF_ANALOG'.
+Generating RTLIL representation for module `\IBUFE3'.
+Generating RTLIL representation for module `\IBUFDS'.
+Generating RTLIL representation for module `\IBUFDS_DLY_ADJ'.
+Generating RTLIL representation for module `\IBUFDS_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDSE3'.
+Generating RTLIL representation for module `\IBUFDS_DPHY'.
+Generating RTLIL representation for module `\IBUFGDS'.
+Generating RTLIL representation for module `\IBUFGDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IOBUF_DCIEN'.
+Generating RTLIL representation for module `\IOBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFE3'.
+Generating RTLIL representation for module `\IOBUFDS'.
+Generating RTLIL representation for module `\IOBUFDS_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFDSE3'.
+Generating RTLIL representation for module `\OBUFDS'.
+Generating RTLIL representation for module `\OBUFDS_DPHY'.
+Generating RTLIL representation for module `\OBUFTDS'.
+Generating RTLIL representation for module `\KEEPER'.
+Generating RTLIL representation for module `\PULLDOWN'.
+Generating RTLIL representation for module `\PULLUP'.
+Generating RTLIL representation for module `\DCIRESET'.
+Generating RTLIL representation for module `\HPIO_VREF'.
+Generating RTLIL representation for module `\BUFGCE'.
+Generating RTLIL representation for module `\BUFGCE_1'.
+Generating RTLIL representation for module `\BUFGMUX'.
+Generating RTLIL representation for module `\BUFGMUX_1'.
+Generating RTLIL representation for module `\BUFGMUX_CTRL'.
+Generating RTLIL representation for module `\BUFGMUX_VIRTEX4'.
+Generating RTLIL representation for module `\BUFG_GT'.
+Generating RTLIL representation for module `\BUFG_GT_SYNC'.
+Generating RTLIL representation for module `\BUFG_PS'.
+Generating RTLIL representation for module `\BUFGCE_DIV'.
+Generating RTLIL representation for module `\BUFH'.
+Generating RTLIL representation for module `\BUFIO2'.
+Generating RTLIL representation for module `\BUFIO2_2CLK'.
+Generating RTLIL representation for module `\BUFIO2FB'.
+Generating RTLIL representation for module `\BUFPLL'.
+Generating RTLIL representation for module `\BUFPLL_MCB'.
+Generating RTLIL representation for module `\BUFIO'.
+Generating RTLIL representation for module `\BUFIODQS'.
+Generating RTLIL representation for module `\BUFR'.
+Generating RTLIL representation for module `\BUFMR'.
+Generating RTLIL representation for module `\BUFMRCE'.
+Generating RTLIL representation for module `\DCM'.
+Generating RTLIL representation for module `\DCM_SP'.
+Generating RTLIL representation for module `\DCM_CLKGEN'.
+Generating RTLIL representation for module `\DCM_ADV'.
+Generating RTLIL representation for module `\DCM_BASE'.
+Generating RTLIL representation for module `\DCM_PS'.
+Generating RTLIL representation for module `\PMCD'.
+Generating RTLIL representation for module `\PLL_ADV'.
+Generating RTLIL representation for module `\PLL_BASE'.
+Generating RTLIL representation for module `\MMCM_ADV'.
+Generating RTLIL representation for module `\MMCM_BASE'.
+Generating RTLIL representation for module `\MMCME2_ADV'.
+Generating RTLIL representation for module `\MMCME2_BASE'.
+Generating RTLIL representation for module `\PLLE2_ADV'.
+Generating RTLIL representation for module `\PLLE2_BASE'.
+Generating RTLIL representation for module `\MMCME3_ADV'.
+Generating RTLIL representation for module `\MMCME3_BASE'.
+Generating RTLIL representation for module `\PLLE3_ADV'.
+Generating RTLIL representation for module `\PLLE3_BASE'.
+Generating RTLIL representation for module `\MMCME4_ADV'.
+Generating RTLIL representation for module `\MMCME4_BASE'.
+Generating RTLIL representation for module `\PLLE4_ADV'.
+Generating RTLIL representation for module `\PLLE4_BASE'.
+Generating RTLIL representation for module `\BUFT'.
+Generating RTLIL representation for module `\IN_FIFO'.
+Generating RTLIL representation for module `\OUT_FIFO'.
+Generating RTLIL representation for module `\HARD_SYNC'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3E'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN3A'.
+Generating RTLIL representation for module `\STARTUP_SPARTAN6'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX4'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX5'.
+Generating RTLIL representation for module `\STARTUP_VIRTEX6'.
+Generating RTLIL representation for module `\STARTUPE2'.
+Generating RTLIL representation for module `\STARTUPE3'.
+Generating RTLIL representation for module `\CAPTURE_SPARTAN3'.
+Generating RTLIL representation for module `\CAPTURE_SPARTAN3A'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX4'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX5'.
+Generating RTLIL representation for module `\CAPTURE_VIRTEX6'.
+Generating RTLIL representation for module `\CAPTUREE2'.
+Generating RTLIL representation for module `\ICAP_SPARTAN3A'.
+Generating RTLIL representation for module `\ICAP_SPARTAN6'.
+Generating RTLIL representation for module `\ICAP_VIRTEX4'.
+Generating RTLIL representation for module `\ICAP_VIRTEX5'.
+Generating RTLIL representation for module `\ICAP_VIRTEX6'.
+Generating RTLIL representation for module `\ICAPE2'.
+Generating RTLIL representation for module `\ICAPE3'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN3'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN3A'.
+Generating RTLIL representation for module `\BSCAN_SPARTAN6'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX4'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX5'.
+Generating RTLIL representation for module `\BSCAN_VIRTEX6'.
+Generating RTLIL representation for module `\BSCANE2'.
+Generating RTLIL representation for module `\DNA_PORT'.
+Generating RTLIL representation for module `\DNA_PORTE2'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX4'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX5'.
+Generating RTLIL representation for module `\FRAME_ECC_VIRTEX6'.
+Generating RTLIL representation for module `\FRAME_ECCE2'.
+Generating RTLIL representation for module `\FRAME_ECCE3'.
+Generating RTLIL representation for module `\FRAME_ECCE4'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX4'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX5'.
+Generating RTLIL representation for module `\USR_ACCESS_VIRTEX6'.
+Generating RTLIL representation for module `\USR_ACCESSE2'.
+Generating RTLIL representation for module `\POST_CRC_INTERNAL'.
+Generating RTLIL representation for module `\SUSPEND_SYNC'.
+Generating RTLIL representation for module `\KEY_CLEAR'.
+Generating RTLIL representation for module `\MASTER_JTAG'.
+Generating RTLIL representation for module `\SPI_ACCESS'.
+Generating RTLIL representation for module `\EFUSE_USR'.
+Generating RTLIL representation for module `\SYSMON'.
+Generating RTLIL representation for module `\XADC'.
+Generating RTLIL representation for module `\SYSMONE1'.
+Generating RTLIL representation for module `\SYSMONE4'.
+Generating RTLIL representation for module `\GTPA1_DUAL'.
+Generating RTLIL representation for module `\GT11_CUSTOM'.
+Generating RTLIL representation for module `\GT11_DUAL'.
+Generating RTLIL representation for module `\GT11CLK'.
+Generating RTLIL representation for module `\GT11CLK_MGT'.
+Generating RTLIL representation for module `\GTP_DUAL'.
+Generating RTLIL representation for module `\GTX_DUAL'.
+Generating RTLIL representation for module `\CRC32'.
+Generating RTLIL representation for module `\CRC64'.
+Generating RTLIL representation for module `\GTHE1_QUAD'.
+Generating RTLIL representation for module `\GTXE1'.
+Generating RTLIL representation for module `\IBUFDS_GTXE1'.
+Generating RTLIL representation for module `\IBUFDS_GTHE1'.
+Generating RTLIL representation for module `\GTHE2_CHANNEL'.
+Generating RTLIL representation for module `\GTHE2_COMMON'.
+Generating RTLIL representation for module `\GTPE2_CHANNEL'.
+Generating RTLIL representation for module `\GTPE2_COMMON'.
+Generating RTLIL representation for module `\GTXE2_CHANNEL'.
+Generating RTLIL representation for module `\GTXE2_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE2'.
+Generating RTLIL representation for module `\GTHE3_CHANNEL'.
+Generating RTLIL representation for module `\GTHE3_COMMON'.
+Generating RTLIL representation for module `\GTYE3_CHANNEL'.
+Generating RTLIL representation for module `\GTYE3_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE3'.
+Generating RTLIL representation for module `\OBUFDS_GTE3'.
+Generating RTLIL representation for module `\OBUFDS_GTE3_ADV'.
+Generating RTLIL representation for module `\GTHE4_CHANNEL'.
+Generating RTLIL representation for module `\GTHE4_COMMON'.
+Generating RTLIL representation for module `\GTYE4_CHANNEL'.
+Generating RTLIL representation for module `\GTYE4_COMMON'.
+Generating RTLIL representation for module `\IBUFDS_GTE4'.
+Generating RTLIL representation for module `\OBUFDS_GTE4'.
+Generating RTLIL representation for module `\OBUFDS_GTE4_ADV'.
+Generating RTLIL representation for module `\GTM_DUAL'.
+Generating RTLIL representation for module `\IBUFDS_GTM'.
+Generating RTLIL representation for module `\OBUFDS_GTM'.
+Generating RTLIL representation for module `\OBUFDS_GTM_ADV'.
+Generating RTLIL representation for module `\HSDAC'.
+Generating RTLIL representation for module `\HSADC'.
+Generating RTLIL representation for module `\RFDAC'.
+Generating RTLIL representation for module `\RFADC'.
+Generating RTLIL representation for module `\PCIE_A1'.
+Generating RTLIL representation for module `\PCIE_EP'.
+Generating RTLIL representation for module `\PCIE_2_0'.
+Generating RTLIL representation for module `\PCIE_2_1'.
+Generating RTLIL representation for module `\PCIE_3_0'.
+Generating RTLIL representation for module `\PCIE_3_1'.
+Generating RTLIL representation for module `\PCIE40E4'.
+Generating RTLIL representation for module `\PCIE4CE4'.
+Generating RTLIL representation for module `\EMAC'.
+Generating RTLIL representation for module `\TEMAC'.
+Generating RTLIL representation for module `\TEMAC_SINGLE'.
+Generating RTLIL representation for module `\CMAC'.
+Generating RTLIL representation for module `\CMACE4'.
+Generating RTLIL representation for module `\MCB'.
+Generating RTLIL representation for module `\HBM_REF_CLK'.
+Generating RTLIL representation for module `\HBM_SNGLBLI_INTF_APB'.
+Generating RTLIL representation for module `\HBM_SNGLBLI_INTF_AXI'.
+Generating RTLIL representation for module `\HBM_ONE_STACK_INTF'.
+Generating RTLIL representation for module `\HBM_TWO_STACK_INTF'.
+Generating RTLIL representation for module `\PPC405_ADV'.
+Generating RTLIL representation for module `\PPC440'.
+Generating RTLIL representation for module `\PS7'.
+Generating RTLIL representation for module `\PS8'.
+Generating RTLIL representation for module `\ILKN'.
+Generating RTLIL representation for module `\ILKNE4'.
+Generating RTLIL representation for module `\VCU'.
+Generating RTLIL representation for module `\FE'.
+Successfully finished Verilog frontend.
+
+5.3. Executing HIERARCHY pass (managing design hierarchy).
+
+5.3.1. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+
+5.3.2. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+Removed 0 unused modules.
+
+5.4. Executing PROC pass (convert processes to netlists).
+
+5.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103 in module RAM64M.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931 in module RAM32M.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861 in module RAM128X1D.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813 in module RAM64X1D.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786 in module RAM32X1D_1.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747 in module RAM32X1D.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610 in module FDPE_1.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607 in module FDPE.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592 in module FDCE_1.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589 in module FDCE.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:592$574 in module FDSE_1.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:559$570 in module FDSE.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:527$552 in module FDRE_1.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:494$548 in module FDRE.
+Removed a total of 0 dead cases.
+
+5.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 90 assignments to connections.
+
+5.4.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2405$1308'.
+  Set init value: \r = 0
+Found init rule in `\SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2361$1301'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2329$1294'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2292$1291'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2264$1284'.
+  Set init value: \r = 16'0000000000000000
+Found init rule in `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1980$1209'.
+  Set init value: \mem_d = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1979$1208'.
+  Set init value: \mem_c = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1978$1207'.
+  Set init value: \mem_b = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1977$1206'.
+  Set init value: \mem_a = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1806$1057'.
+  Set init value: \mem_d = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1805$1056'.
+  Set init value: \mem_c = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1804$1055'.
+  Set init value: \mem_b = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1803$1054'.
+  Set init value: \mem_a = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1712$898'.
+  Set init value: \mem = 128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1607$850'.
+  Set init value: \mem = 64'0000000000000000000000000000000000000000000000000000000000000000
+Found init rule in `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1561$805'.
+  Set init value: \mem = 0
+Found init rule in `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1502$778'.
+  Set init value: \mem = 0
+Found init rule in `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$613'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$609'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$595'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$591'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$577'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$573'.
+  Set init value: \Q = 1'1
+Found init rule in `\FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$555'.
+  Set init value: \Q = 1'0
+Found init rule in `\FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$551'.
+  Set init value: \Q = 1'0
+
+5.4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \PRE in `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610'.
+Found async reset \PRE in `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607'.
+Found async reset \CLR in `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592'.
+Found async reset \CLR in `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589'.
+
+5.4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~22 debug messages>
+
+5.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2405$1308'.
+Creating decoders for process `\SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2413$1307'.
+     1/1: $0\r[31:0]
+Creating decoders for process `\SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2361$1301'.
+Creating decoders for process `\SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2369$1300'.
+     1/1: $0\r[15:0]
+Creating decoders for process `\SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2329$1294'.
+Creating decoders for process `\SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2332$1293'.
+Creating decoders for process `\SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2292$1291'.
+Creating decoders for process `\SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2299$1290'.
+     1/1: $0\r[15:0]
+Creating decoders for process `\SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2264$1284'.
+Creating decoders for process `\SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2266$1283'.
+Creating decoders for process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1980$1209'.
+Creating decoders for process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1979$1208'.
+Creating decoders for process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1978$1207'.
+Creating decoders for process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1977$1206'.
+Creating decoders for process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+     1/16: $1$lookahead\mem_d$1102[63:0]$1135
+     2/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1092[63:0]$1130
+     3/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1091[63:0]$1129
+     4/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1093[5:0]$1131
+     5/16: $1$lookahead\mem_c$1101[63:0]$1134
+     6/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1089[63:0]$1127
+     7/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1088[63:0]$1126
+     8/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1090[5:0]$1128
+     9/16: $1$lookahead\mem_b$1100[63:0]$1133
+    10/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1086[63:0]$1124
+    11/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1085[63:0]$1123
+    12/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1087[5:0]$1125
+    13/16: $1$lookahead\mem_a$1099[63:0]$1132
+    14/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1083[63:0]$1121
+    15/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1082[63:0]$1120
+    16/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1084[5:0]$1122
+Creating decoders for process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1806$1057'.
+Creating decoders for process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1805$1056'.
+Creating decoders for process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1804$1055'.
+Creating decoders for process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1803$1054'.
+Creating decoders for process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+     1/16: $1$lookahead\mem_d$930[63:0]$963
+     2/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$912[63:0]$958
+     3/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$911[63:0]$957
+     4/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$913[31:0]$959
+     5/16: $1$lookahead\mem_c$929[63:0]$962
+     6/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$909[63:0]$955
+     7/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$908[63:0]$954
+     8/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$910[31:0]$956
+     9/16: $1$lookahead\mem_b$928[63:0]$961
+    10/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$906[63:0]$952
+    11/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$905[63:0]$951
+    12/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$907[31:0]$953
+    13/16: $1$lookahead\mem_a$927[63:0]$960
+    14/16: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$903[63:0]$949
+    15/16: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$902[63:0]$948
+    16/16: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$904[31:0]$950
+Creating decoders for process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1712$898'.
+Creating decoders for process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+     1/4: $1$lookahead\mem$860[127:0]$869
+     2/4: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$855[127:0]$867
+     3/4: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$854[127:0]$866
+     4/4: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$856[6:0]$868
+Creating decoders for process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1607$850'.
+Creating decoders for process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+     1/4: $1$lookahead\mem$812[63:0]$821
+     2/4: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$807[63:0]$819
+     3/4: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$806[63:0]$818
+     4/4: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$808[5:0]$820
+Creating decoders for process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1561$805'.
+Creating decoders for process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+     1/4: $1$lookahead\mem$785[31:0]$794
+     2/4: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$780[31:0]$792
+     3/4: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$779[31:0]$791
+     4/4: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$781[4:0]$793
+Creating decoders for process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1502$778'.
+Creating decoders for process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+     1/4: $1$lookahead\mem$746[31:0]$755
+     2/4: $1$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$741[31:0]$753
+     3/4: $1$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$740[31:0]$752
+     4/4: $1$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$742[4:0]$754
+Creating decoders for process `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$613'.
+Creating decoders for process `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$609'.
+Creating decoders for process `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$595'.
+Creating decoders for process `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$591'.
+Creating decoders for process `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$577'.
+Creating decoders for process `\FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:592$574'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$573'.
+Creating decoders for process `\FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:559$570'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$555'.
+Creating decoders for process `\FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:527$552'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$551'.
+Creating decoders for process `\FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:494$548'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\mac_pe.$proc$mac_pe.v:4$1'.
+     1/1: $0\acc[31:0]
+
+5.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SRLC32E.\r' using process `\SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2413$1307'.
+  created $dff cell `$procdff$1541' with positive edge clock.
+Creating register for signal `\SRLC16E.\r' using process `\SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2369$1300'.
+  created $dff cell `$procdff$1542' with positive edge clock.
+Creating register for signal `\SRLC16.\r' using process `\SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2332$1293'.
+  created $dff cell `$procdff$1543' with positive edge clock.
+Creating register for signal `\SRL16E.\r' using process `\SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2299$1290'.
+  created $dff cell `$procdff$1544' with positive edge clock.
+Creating register for signal `\SRL16.\r' using process `\SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2266$1283'.
+  created $dff cell `$procdff$1545' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_a' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1546' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_b' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1547' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_c' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1548' with positive edge clock.
+Creating register for signal `\RAM64M.\mem_d' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1549' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1082' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1550' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1083' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1551' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1988$1084' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1552' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1085' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1553' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1086' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1554' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1989$1087' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1555' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1088' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1556' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1089' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1557' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1990$1090' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1558' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1091' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1559' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1092' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1560' with positive edge clock.
+Creating register for signal `\RAM64M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1991$1093' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1561' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_a$1099' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1562' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_b$1100' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1563' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_c$1101' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1564' with positive edge clock.
+Creating register for signal `\RAM64M.$lookahead\mem_d$1102' using process `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+  created $dff cell `$procdff$1565' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_a' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1566' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_b' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1567' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_c' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1568' with positive edge clock.
+Creating register for signal `\RAM32M.\mem_d' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1569' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$902' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1570' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$903' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1571' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1814$904' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1572' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$905' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1573' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$906' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1574' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1815$907' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1575' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$908' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1576' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$909' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1577' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1816$910' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1578' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$911' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1579' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$912' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1580' with positive edge clock.
+Creating register for signal `\RAM32M.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1817$913' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1581' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_a$927' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1582' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_b$928' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1583' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_c$929' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1584' with positive edge clock.
+Creating register for signal `\RAM32M.$lookahead\mem_d$930' using process `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+  created $dff cell `$procdff$1585' with positive edge clock.
+Creating register for signal `\RAM128X1D.\mem' using process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+  created $dff cell `$procdff$1586' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$854' using process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+  created $dff cell `$procdff$1587' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$855' using process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+  created $dff cell `$procdff$1588' with positive edge clock.
+Creating register for signal `\RAM128X1D.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$856' using process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+  created $dff cell `$procdff$1589' with positive edge clock.
+Creating register for signal `\RAM128X1D.$lookahead\mem$860' using process `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+  created $dff cell `$procdff$1590' with positive edge clock.
+Creating register for signal `\RAM64X1D.\mem' using process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+  created $dff cell `$procdff$1591' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$806' using process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+  created $dff cell `$procdff$1592' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$807' using process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+  created $dff cell `$procdff$1593' with positive edge clock.
+Creating register for signal `\RAM64X1D.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$808' using process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+  created $dff cell `$procdff$1594' with positive edge clock.
+Creating register for signal `\RAM64X1D.$lookahead\mem$812' using process `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+  created $dff cell `$procdff$1595' with positive edge clock.
+Creating register for signal `\RAM32X1D_1.\mem' using process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+  created $dff cell `$procdff$1596' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$779' using process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+  created $dff cell `$procdff$1597' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$780' using process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+  created $dff cell `$procdff$1598' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$781' using process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+  created $dff cell `$procdff$1599' with negative edge clock.
+Creating register for signal `\RAM32X1D_1.$lookahead\mem$785' using process `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+  created $dff cell `$procdff$1600' with negative edge clock.
+Creating register for signal `\RAM32X1D.\mem' using process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+  created $dff cell `$procdff$1601' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$mask$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$740' using process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+  created $dff cell `$procdff$1602' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$data$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$741' using process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+  created $dff cell `$procdff$1603' with positive edge clock.
+Creating register for signal `\RAM32X1D.$bitselwrite$sel$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$742' using process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+  created $dff cell `$procdff$1604' with positive edge clock.
+Creating register for signal `\RAM32X1D.$lookahead\mem$746' using process `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+  created $dff cell `$procdff$1605' with positive edge clock.
+Creating register for signal `\FDPE_1.\Q' using process `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610'.
+  created $adff cell `$procdff$1606' with negative edge clock and positive level reset.
+Creating register for signal `\FDPE.\Q' using process `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607'.
+  created $adff cell `$procdff$1607' with positive edge clock and positive level reset.
+Creating register for signal `\FDCE_1.\Q' using process `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592'.
+  created $adff cell `$procdff$1608' with negative edge clock and positive level reset.
+Creating register for signal `\FDCE.\Q' using process `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589'.
+  created $adff cell `$procdff$1609' with positive edge clock and positive level reset.
+Creating register for signal `\FDSE_1.\Q' using process `\FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:592$574'.
+  created $dff cell `$procdff$1610' with negative edge clock.
+Creating register for signal `\FDSE.\Q' using process `\FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:559$570'.
+  created $dff cell `$procdff$1611' with positive edge clock.
+Creating register for signal `\FDRE_1.\Q' using process `\FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:527$552'.
+  created $dff cell `$procdff$1612' with negative edge clock.
+Creating register for signal `\FDRE.\Q' using process `\FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:494$548'.
+  created $dff cell `$procdff$1613' with positive edge clock.
+Creating register for signal `\mac_pe.\acc' using process `\mac_pe.$proc$mac_pe.v:4$1'.
+  created $dff cell `$procdff$1614' with positive edge clock.
+Creating register for signal `\mac_pe.\prod' using process `\mac_pe.$proc$mac_pe.v:4$1'.
+  created $dff cell `$procdff$1615' with positive edge clock.
+Creating register for signal `\mac_pe.\v1' using process `\mac_pe.$proc$mac_pe.v:4$1'.
+  created $dff cell `$procdff$1616' with positive edge clock.
+Creating register for signal `\mac_pe.\c1' using process `\mac_pe.$proc$mac_pe.v:4$1'.
+  created $dff cell `$procdff$1617' with positive edge clock.
+
+5.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2405$1308'.
+Found and cleaned up 1 empty switch in `\SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2413$1307'.
+Removing empty process `SRLC32E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2413$1307'.
+Removing empty process `SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2361$1301'.
+Found and cleaned up 1 empty switch in `\SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2369$1300'.
+Removing empty process `SRLC16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2369$1300'.
+Removing empty process `SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2329$1294'.
+Removing empty process `SRLC16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2332$1293'.
+Removing empty process `SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2292$1291'.
+Found and cleaned up 1 empty switch in `\SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2299$1290'.
+Removing empty process `SRL16E.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2299$1290'.
+Removing empty process `SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2264$1284'.
+Removing empty process `SRL16.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:2266$1283'.
+Removing empty process `RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1980$1209'.
+Removing empty process `RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1979$1208'.
+Removing empty process `RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1978$1207'.
+Removing empty process `RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1977$1206'.
+Found and cleaned up 1 empty switch in `\RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+Removing empty process `RAM64M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1986$1103'.
+Removing empty process `RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1806$1057'.
+Removing empty process `RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1805$1056'.
+Removing empty process `RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1804$1055'.
+Removing empty process `RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1803$1054'.
+Found and cleaned up 1 empty switch in `\RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+Removing empty process `RAM32M.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1812$931'.
+Removing empty process `RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1712$898'.
+Found and cleaned up 1 empty switch in `\RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+Removing empty process `RAM128X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1716$861'.
+Removing empty process `RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1607$850'.
+Found and cleaned up 1 empty switch in `\RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+Removing empty process `RAM64X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1611$813'.
+Removing empty process `RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1561$805'.
+Found and cleaned up 1 empty switch in `\RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+Removing empty process `RAM32X1D_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1565$786'.
+Removing empty process `RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1502$778'.
+Found and cleaned up 1 empty switch in `\RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+Removing empty process `RAM32X1D.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:1506$747'.
+Removing empty process `FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$613'.
+Found and cleaned up 1 empty switch in `\FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610'.
+Removing empty process `FDPE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:815$610'.
+Removing empty process `FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$609'.
+Found and cleaned up 1 empty switch in `\FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607'.
+Removing empty process `FDPE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:774$607'.
+Removing empty process `FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$595'.
+Found and cleaned up 1 empty switch in `\FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592'.
+Removing empty process `FDCE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:736$592'.
+Removing empty process `FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$591'.
+Found and cleaned up 1 empty switch in `\FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589'.
+Removing empty process `FDCE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:695$589'.
+Removing empty process `FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$577'.
+Found and cleaned up 2 empty switches in `\FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:592$574'.
+Removing empty process `FDSE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:592$574'.
+Removing empty process `FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$573'.
+Found and cleaned up 2 empty switches in `\FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:559$570'.
+Removing empty process `FDSE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:559$570'.
+Removing empty process `FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$555'.
+Found and cleaned up 2 empty switches in `\FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:527$552'.
+Removing empty process `FDRE_1.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:527$552'.
+Removing empty process `FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:0$551'.
+Found and cleaned up 2 empty switches in `\FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:494$548'.
+Removing empty process `FDRE.$proc$/usr/bin/../share/yosys/xilinx/cells_sim.v:494$548'.
+Found and cleaned up 1 empty switch in `\mac_pe.$proc$mac_pe.v:4$1'.
+Removing empty process `mac_pe.$proc$mac_pe.v:4$1'.
+Cleaned up 22 empty switches.
+
+5.4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.5. Executing TRIBUF pass.
+
+5.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+5.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+5.9. Executing CHECK pass (checking for obvious problems).
+Checking module mac_array...
+Checking module mac_pe...
+Found and reported 0 problems.
+
+5.10. Executing OPT pass (performing simple optimizations).
+
+5.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.10.9. Finished OPT passes. (There is nothing left to do.)
+
+5.11. Executing FSM pass (extract and optimize FSM).
+
+5.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+5.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.12. Executing OPT pass (performing simple optimizations).
+
+5.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$1614 ($dff) from module mac_pe (D = $ternary$mac_pe.v:6$4_Y, Q = \acc).
+
+5.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+5.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.12.16. Finished OPT passes. (There is nothing left to do.)
+
+5.13. Executing WREDUCE pass (reducing word size of cells).
+
+5.14. Executing PEEPOPT pass (run peephole optimizers).
+
+5.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.16. Executing PMUX2SHIFTX pass.
+
+5.17. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.18. Executing TECHMAP pass (map to technology primitives).
+
+5.18.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/usr/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+5.18.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/xc7_dsp_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/xc7_dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__MUL25X18'.
+Successfully finished Verilog frontend.
+
+5.18.3. Continuing TECHMAP pass.
+Using template $paramod$cc733e0dbb038034434917c1e0de96998ec4103f\_80_mul for cells of type $mul.
+Using template $paramod$ddeb8d93e252ea93f59573db930b85d56915e9c4\$__MUL25X18 for cells of type $__MUL25X18.
+No more expansions possible.
+<suppressed ~106 debug messages>
+
+5.19. Executing OPT_EXPR pass (perform const folding).
+
+5.20. Executing WREDUCE pass (reducing word size of cells).
+
+5.21. Executing XILINX_DSP pass (pack resources into DSPs).
+Analysing mac_pe.$mul$mac_pe.v:5$2 for Xilinx DSP packing.
+  clock: \clk (posedge) ffM:$procdff$1615
+<suppressed ~13 debug messages>
+
+5.22. Executing TECHMAP pass (map to technology primitives).
+
+5.22.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+5.22.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lcu.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lcu.v' to AST representation.
+Generating RTLIL representation for module `\_80_lcu_cmp_'.
+Generating RTLIL representation for module `\$__CMP2LCU'.
+Successfully finished Verilog frontend.
+
+5.22.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~7 debug messages>
+
+5.23. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module mac_array:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module mac_pe:
+  creating $macc model for $add$mac_pe.v:6$3 ($add).
+  creating $alu model for $macc $add$mac_pe.v:6$3.
+  creating $alu cell for $add$mac_pe.v:6$3: $auto$alumacc.cc:485:replace_alu$1625
+  created 1 $alu and 0 $macc cells.
+
+5.24. Executing SHARE pass (SAT-based resource sharing).
+
+5.25. Executing OPT pass (performing simple optimizations).
+
+5.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.25.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.25.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.25.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.25.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.25.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+Removed 1 unused cells and 12 unused wires.
+<suppressed ~2 debug messages>
+
+5.25.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.25.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.25.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.25.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.25.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.25.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.25.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.25.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.25.16. Finished OPT passes. (There is nothing left to do.)
+
+5.26. Executing MEMORY pass.
+
+5.26.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.26.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.26.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.26.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.26.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.26.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.26.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.26.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.26.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.26.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.28. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+5.29. Executing TECHMAP pass (map to technology primitives).
+
+5.29.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/lutrams_xc5v_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/lutrams_xc5v_map.v' to AST representation.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_SP_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_DP_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_QP_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_OP_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_SDP_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_64X8SW_'.
+Generating RTLIL representation for module `\$__XILINX_LUTRAM_32X16DR8_'.
+Successfully finished Verilog frontend.
+
+5.29.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~9 debug messages>
+
+5.30. Executing TECHMAP pass (map to technology primitives).
+
+5.30.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/brams_xc6v_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/brams_xc6v_map.v' to AST representation.
+Generating RTLIL representation for module `\$__XILINX_BLOCKRAM_TDP_'.
+Generating RTLIL representation for module `\$__XILINX_BLOCKRAM_SDP_'.
+Successfully finished Verilog frontend.
+
+5.30.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+5.31. Executing OPT pass (performing simple optimizations).
+
+5.31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.31.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.31.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.31.5. Finished fast OPT passes.
+
+5.32. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.33. Executing OPT pass (performing simple optimizations).
+
+5.33.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.33.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.33.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \mac_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \mac_pe..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+5.33.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \mac_array.
+  Optimizing cells in module \mac_pe.
+Performed a total of 0 changes.
+
+5.33.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+Removed a total of 0 cells.
+
+5.33.6. Executing OPT_SHARE pass.
+
+5.33.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.33.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+
+5.33.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.33.10. Finished OPT passes. (There is nothing left to do.)
+
+5.34. Executing XILINX_SRL pass (Xilinx shift register extraction).
+
+5.35. Executing TECHMAP pass (map to technology primitives).
+
+5.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.35.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_xilinx_lcu'.
+Generating RTLIL representation for module `\_80_xilinx_alu'.
+Successfully finished Verilog frontend.
+
+5.35.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using template $paramod$4fc821520cb3a924f2bc6fa8576a539779b37dc8\_80_xilinx_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~106 debug messages>
+
+5.36. Executing OPT pass (performing simple optimizations).
+
+5.36.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+<suppressed ~32 debug messages>
+
+5.36.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\mac_array'.
+Finding identical cells in module `\mac_pe'.
+<suppressed ~48 debug messages>
+Removed a total of 16 cells.
+
+5.36.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.36.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \mac_array..
+Finding unused cells or wires in module \mac_pe..
+Removed 16 unused cells and 19 unused wires.
+<suppressed ~17 debug messages>
+
+5.36.5. Finished fast OPT passes.
+
+5.37. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port mac_array.a using IBUF.
+Mapping port mac_array.acc using OBUF.
+Mapping port mac_array.b using IBUF.
+Mapping port mac_array.clear using IBUF.
+Mapping port mac_array.clk using IBUF.
+Mapping port mac_array.valid using IBUF.
+
+5.38. Executing TECHMAP pass (map to technology primitives).
+
+5.38.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.38.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$__SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_MUXF78'.
+Successfully finished Verilog frontend.
+
+5.38.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~76 debug messages>
+
+5.39. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+5.40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module mac_array.
+Optimizing module mac_pe.
+
+5.41. Executing ABC pass (technology mapping using ABC).
+
+5.41.1. Extracting gate netlist of module `\mac_array' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+5.41.2. Extracting gate netlist of module `\mac_pe' to `<abc-temp-dir>/input.blif'..
+Extracted 64 gates and 145 wires to a netlist network with 81 inputs and 64 outputs.
+
+5.41.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.41.2.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:       64
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:       81
+ABC RESULTS:          output signals:       64
+Removing temp directory.
+Removed 0 unused cells and 114 unused wires.
+
+5.42. Executing TECHMAP pass (map to technology primitives).
+
+5.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFSRE_NPPP_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPPP_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NPP_'.
+Generating RTLIL representation for module `\$_DLATCH_PPP_'.
+Successfully finished Verilog frontend.
+
+5.42.2. Continuing TECHMAP pass.
+Using template $paramod\$_SDFFE_PP0P_\_TECHMAP_WIREINIT_Q_=1'x for cells of type $_SDFFE_PP0P_.
+No more expansions possible.
+<suppressed ~63 debug messages>
+
+5.43. Executing XILINX_SRL pass (Xilinx shift register extraction).
+
+5.44. Executing TECHMAP pass (map to technology primitives).
+
+5.44.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/lut_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+5.44.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$__SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_MUXF78'.
+Successfully finished Verilog frontend.
+
+5.44.3. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+No more expansions possible.
+<suppressed ~109 debug messages>
+
+5.45. Executing XILINX_DFFOPT pass (optimize FF control signal usage).
+Optimizing FFs in mac_array.
+Optimizing FFs in mac_pe.
+
+5.46. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+Optimizing LUTs in mac_array.
+Optimizing LUTs in mac_pe.
+
+5.47. Executing CLKBUFMAP pass (inserting clock buffers).
+Inserting BUFG on mac_array.$iopadmap$clk[0].
+Removed 0 unused cells and 332 unused wires.
+
+5.48. Executing HIERARCHY pass (managing design hierarchy).
+
+5.48.1. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+
+5.48.2. Analyzing design hierarchy..
+Top module:  \mac_array
+Used module:     \mac_pe
+Removed 0 unused modules.
+
+5.49. Printing statistics.
+
+=== mac_array ===
+
+   Number of wires:                 13
+   Number of wire bits:          12295
+   Number of public wires:           6
+   Number of public wire bits:    6147
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6276
+     BUFG                            1
+     IBUF                         2051
+     OBUF                         4096
+     mac_pe                        128
+
+   Estimated number of LCs:          0
+
+=== mac_pe ===
+
+   Number of wires:                 45
+   Number of wire bits:            229
+   Number of public wires:           9
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                107
+     CARRY4                          8
+     DSP48E1                         1
+     FDRE                           34
+     LUT2                           32
+     LUT3                           32
+
+   Estimated number of LCs:         32
+
+=== design hierarchy ===
+
+   mac_array                         1
+     mac_pe                        128
+
+   Number of wires:               5773
+   Number of wire bits:          41607
+   Number of public wires:        1158
+   Number of public wire bits:   14979
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              19844
+     BUFG                            1
+     CARRY4                       1024
+     DSP48E1                       128
+     FDRE                         4352
+     IBUF                         2051
+     LUT2                         4096
+     LUT3                         4096
+     OBUF                         4096
+
+   Estimated number of LCs:       4096
+
+5.50. Executing CHECK pass (checking for obvious problems).
+Checking module mac_array...
+Checking module mac_pe...
+Found and reported 0 problems.
+
+6. Printing statistics.
+
+=== mac_array ===
+
+   Number of wires:                 13
+   Number of wire bits:          12295
+   Number of public wires:           6
+   Number of public wire bits:    6147
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6276
+     BUFG                            1
+     IBUF                         2051
+     OBUF                         4096
+     mac_pe                        128
+
+=== mac_pe ===
+
+   Number of wires:                 45
+   Number of wire bits:            229
+   Number of public wires:           9
+   Number of public wire bits:      69
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                107
+     CARRY4                          8
+     DSP48E1                         1
+     FDRE                           34
+     LUT2                           32
+     LUT3                           32
+
+=== design hierarchy ===
+
+   mac_array                         1
+     mac_pe                        128
+
+   Number of wires:               5773
+   Number of wire bits:          41607
+   Number of public wires:        1158
+   Number of public wire bits:   14979
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              19844
+     BUFG                            1
+     CARRY4                       1024
+     DSP48E1                       128
+     FDRE                         4352
+     IBUF                         2051
+     LUT2                         4096
+     LUT3                         4096
+     OBUF                         4096
+
+End of script. Logfile hash: 8b6e4c4242, CPU: user 6.28s system 0.05s, MEM: 133.59 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 38% 1x iopadmap (2 sec), 30% 20x read_verilog (1 sec), ...

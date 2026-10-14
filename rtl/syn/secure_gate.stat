@@ -1,0 +1,76 @@
+
+6. Printing statistics.
+
+=== auth_fsm ===
+
+   Number of wires:                 19
+   Number of wire bits:             42
+   Number of public wires:          10
+   Number of public wire bits:      26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 18
+     FDRE                            2
+     LUT2                            3
+     LUT3                            1
+     LUT5                            1
+     LUT6                            7
+     MUXF7                           3
+     MUXF8                           1
+
+=== lfsr_noise ===
+
+   Number of wires:                  7
+   Number of wire bits:             22
+   Number of public wires:           5
+   Number of public wire bits:      14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     FDRE                            8
+     LUT2                            1
+     LUT3                            4
+
+=== secure_gate ===
+
+   Number of wires:                 24
+   Number of wire bits:             61
+   Number of public wires:          12
+   Number of public wire bits:      31
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     BUFG                            1
+     IBUF                           23
+     OBUF                            6
+     auth_fsm                        1
+     lfsr_noise                      1
+
+=== design hierarchy ===
+
+   secure_gate                       1
+     auth_fsm                        1
+     lfsr_noise                      1
+
+   Number of wires:                 50
+   Number of wire bits:            125
+   Number of public wires:          27
+   Number of public wire bits:      71
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 61
+     BUFG                            1
+     FDRE                           10
+     IBUF                           23
+     LUT2                            4
+     LUT3                            5
+     LUT5                            1
+     LUT6                            7
+     MUXF7                           3
+     MUXF8                           1
+     OBUF                            6
+
